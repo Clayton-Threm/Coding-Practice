@@ -1,11 +1,8 @@
 #Project Euler, Question 3:
-#-----------------------------
+
 #The prime factors of 13195 are 5, 7, 13 and 29.
 #What is the largest prime factor of the number 600851475143 ?
-#-----------------------------------------------------------------
-#Prime Factorization is finding which prime numbers multiply together to make the original number.
-#So, the prime factorization of 12 is: 2 x 2 x 3
-#And the prime factorization of 18 is: 2 x 3 x 3
+
 
 def func_pf(x):
     factor = 2

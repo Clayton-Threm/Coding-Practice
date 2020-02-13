@@ -1,3 +1,5 @@
+#Project Euler Question 10
+
 #The sum of the primes below 10 is 2 + 3 + 5 + 7 = 17.
 
 #Find the sum of all the primes below two million.
@@ -20,7 +22,3 @@ def prime_sum(x):
 
 
 print (prime_sum(2000000), "is the sum")
-
-#the result is 142913828922
-#The code takes about 655 seconds (about 11 minutes) to run lmao
-#Wait, now it takes 15 seconds why

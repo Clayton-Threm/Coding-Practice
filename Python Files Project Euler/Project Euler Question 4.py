@@ -1,5 +1,5 @@
 #Project Euler Question 4
-#--------------------------
+
 #A palindromic number reads the same both ways. The largest palindrome made from the product of two 2-digit numbers is 9009 = 91 × 99.
 #Find the largest palindrome made from the product of two 3-digit numbers.
 
@@ -20,9 +20,9 @@ def func_pal(x,y):
             if pal(result):
                 bp = result
                 yh = y
-                print (x, "and", y, "are factors")
-                print (result, "is a palidrome")
-                print ()
+                #print (x, "and", y, "are factors")
+                #print (result, "is a palidrome")
+                #print ()
                 if (yh == ys):
                     break
         if (y > yh):
