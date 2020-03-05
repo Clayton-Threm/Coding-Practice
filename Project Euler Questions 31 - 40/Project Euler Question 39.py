@@ -24,7 +24,7 @@ def perimeter_triangle(x):
     for p in range(2, (x + 1), 2):
         tri_list = right_triangle(p)
         if len(tri_list) > highest:
-            print (tri_list, p)
+            #print (tri_list, p)
             highest = len(tri_list)
             highest_list = tri_list
             highest_per = p
