@@ -25,7 +25,7 @@ for cipher in cipher_list:
             index = 0
     else:
         sum_code = sum(ord(i) for i in new_code)
-        pass
+        break
 
 print (sum_code)
 
