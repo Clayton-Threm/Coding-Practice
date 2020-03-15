@@ -19,42 +19,36 @@ def prime_check(x):
 
 def con_prime_sums(num):
     prime_list = [2, 3, 5]
-    highest_length = 2
-    highest_x = 5
     highest_sum = [2, 3]
     for x in range(7, num, 2):
-        if prime_check(x) is True:
-            prime_list.append(x)
-            prime_index = -1
-            check = True
-            while check is True:
-                prime_index += 1
-                prime_inded_start = prime_index
-                prime_sum = [prime_list[prime_index]]
-                if int((x ** (2 / 3)) + 1) <= prime_sum[0]:
-                    break
-                while check is True:
-                    prime_index += 1
-                    prime_step = prime_list[prime_index]
-                    if int((x ** (2 / 3)) + 1) <= prime_sum[0]:
-                        break
-                    prime_sum.append(prime_step)
-                    if (len(prime_sum) < highest_length) or (sum(prime_sum) < x):
-                        continue
-                    if sum(prime_sum) > x:
-                        if len(prime_sum) <= highest_length:
-                            check = False
-                        prime_index = prime_inded_start
-                        break
-                    elif sum(prime_sum) == x:
-                        if len(prime_sum) >= highest_length:
-                            highest_length = len(prime_sum)
-                            highest_x = x
-                            highest_sum = prime_sum
-                        check = False
-                        break
-                    else:
-                        pass
+        if prime_check(x) is False:
+            continue
+        prime_list.append(x)
+
+    highest_x = 5
+    highest_length = 2
+    for start_index, prime in enumerate(prime_list):
+        prime_sum = prime
+        prime_save = prime_sum
+        index_save = start_index
+        sum_test = sum(prime_list[start_index:(highest_length + start_index - 1)])
+        if sum_test > num:
+            break
+        for index, prime in enumerate(prime_list[(start_index + 1):], 1):
+            prime_sum += prime
+            if prime_sum >= num:
+                index_length = (index_save + 1)
+                if index_length >= highest_length:
+                    highest_length = index_length
+                    highest_x = prime_save
+                    #print (highest_x, [prime_list[start_index], prime_list[index_save + start_index]], highest_length)
+                break
+            else:
+                if prime_sum < highest_x:
+                    continue
+                if prime_sum in prime_list:
+                    prime_save = prime_sum
+                    index_save = index
     return highest_x
 
 
